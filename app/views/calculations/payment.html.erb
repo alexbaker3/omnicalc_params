@@ -21,5 +21,5 @@
   Payment
 </div>
 <div>
-<%= @monthly_payment%>
+<%= number_to_currency(@monthly_payment, :precision =>2)%>
 </div>

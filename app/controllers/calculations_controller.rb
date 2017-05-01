@@ -2,12 +2,14 @@ class CalculationsController < ApplicationController
 
 def flex_square_5
 @user_number = params["num"].to_f
-@square = @user_number **2
+@squar = @user_number **2
+@square = @squar.round(2)
 end
 
 def flex_square_root
 @user_number1 = params["num"].to_f
-@square_root = @user_number1 **0.5
+@square_roo = @user_number1 **0.5
+@square_root = @square_roo.round(2)
 end
 
 def square_form
@@ -41,8 +43,12 @@ def flex_payment
 
     payment=(monthly_rate)/(1-(1+monthly_rate)**-number_of_payments)
 
-    @monthly_payment = payment*@principal
-    render("flex_payment.html.erb")
+    @monthly_paymen = payment*@principal
+
+
+@monthly_payment = @monthly_paymen.round(2)
+
+render("flex_payment.html.erb")
 end
 
 def random_number
@@ -68,7 +74,10 @@ def payment
 
       payment=(monthly_rate)/(1-(1+monthly_rate)**-number_of_payments)
 
-      @monthly_payment = payment*@principal
+      @monthly_paymen = payment*@principal
+
+
+  @monthly_payment = @monthly_paymen.round(2)
       render("calculations/payment.html.erb")
 end
 
