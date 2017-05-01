@@ -13,5 +13,23 @@ get("/square_root/new", {:controller =>"calculations", :action => "square_root_f
 
 get("/square_root/results", {:controller =>"calculations", :action => "square_root"})
 
+get("/flexible/payment/:apr/:number_of_years/:principal_value", {:controller =>"calculations", :action => "flex_payment"})
 
+get("/flexible/:min/:max", {:controller =>"calculations", :action => "random_number"})
+
+get("/payment/new", {:controller =>"calculations", :action => "payment_form"})
+
+get("/payment/results", {:controller =>"calculations", :action => "payment"})
+
+get("/random/new", {:controller =>"calculations", :action => "random_form"})
+
+get("/random/results", {:controller =>"calculations", :action => "random"})
+
+get("/word_count/new", {:controller =>"calculations", :action => "word_count_form"})
+
+get("/word_count/results", {:controller =>"calculations", :action => "word_count"})
+
+get("/descriptive_stats/new", {:controller =>"calculations", :action => "descriptive_stats_form"})
+
+get("/descriptive_stats/results", {:controller =>"calculations", :action => "descriptive_stats"})
 end
